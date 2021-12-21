@@ -1,27 +1,11 @@
-# AngularAdminFile
+# fileBox
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.3.
+file box app is an application very similar to google drive or dropbox, since it will allow you to upload files to the cloud. fileBox brings all the tools a cloud storage app needs, so feel free to give it a try.
+The application is a free application made without profit, therefore it is possible that the storage is very limited or that even some of your files are periodically deleted, any doubt, suggestion, criticism, etc. that you have about the project, tell me on my social networks and there I will try to assist you as soon as possible.
 
-## Development server
+## Run the app
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+To run the app and test it on your pc, follow these steps:
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. download the repository
+2. run the command: ```ng serve -o```
