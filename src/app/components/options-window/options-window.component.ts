@@ -88,6 +88,7 @@ export class OptionsWindowComponent implements OnInit {
       this.globalVariablesService.userFiles.push(resp.fileDB);
 
       this.uploading = false;
+      console.log(resp.error)
 
       Swal.fire({ 
         icon: 'success',
