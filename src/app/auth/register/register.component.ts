@@ -13,6 +13,8 @@ export class RegisterComponent implements OnInit {
 
   formGroup:any;
   firstTime:boolean = true;
+  showHtml:boolean = true;
+
   constructor( private formBuilder:FormBuilder,
                private userService:UserService,
                private router:Router ) { }
@@ -36,14 +38,17 @@ export class RegisterComponent implements OnInit {
     this.formGroup.value.username.trim()
     this.formGroup.value.email.trim()
 
+    this.showHtml = false;
     this.userService.createUser(this.formGroup.value).subscribe(resp=>{
 
+      this.showHtml = true;
       this.router.navigateByUrl('/dashboard');
 
     },(err)=>{
 
       if (err.error.msj.keyValue?.username === this.formGroup.value.username) {
 
+        this.showHtml = true;
         Swal.fire({
           icon: 'error',
           title: 'The username you wrote already exists, please put a new one',
@@ -54,6 +59,7 @@ export class RegisterComponent implements OnInit {
 
       if (err.error.msj.keyValue?.email === this.formGroup.value.email) {
 
+        this.showHtml = true;
         Swal.fire({
           icon: 'error',
           title: 'The email you wrote already exists, please put a new one',
@@ -62,6 +68,7 @@ export class RegisterComponent implements OnInit {
 
       }
 
+      this.showHtml = true;
       Swal.fire({
         icon: 'error',
         title: 'there was an error',

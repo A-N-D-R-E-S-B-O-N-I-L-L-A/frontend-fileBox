@@ -30,7 +30,7 @@ export class AuthService {
 
     return this.http.get(`${this.baseUrl}/api/auth/renew-token`, {
       headers: {
-        'x-token': this.token
+        'x-token': localStorage.getItem('token') || ''
       }
     }).pipe(
       tap((resp:any)=>{

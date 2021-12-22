@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
 
   formGroup:any;
   firstTime:boolean = true;
+  showHtml:boolean = true;
 
   constructor(private authService:AuthService,
               private formBuilder:FormBuilder,
@@ -37,12 +38,15 @@ export class LoginComponent implements OnInit {
 
     this.formGroup.value.email.trim()
     
+    this.showHtml = false;
     this.authService.loginService(this.formGroup.value).subscribe(resp=>{
 
+      this.showHtml = true;
       this.router.navigateByUrl('/dashboard')
 
     }, (err)=>{
 
+      this.showHtml = true;
       Swal.fire({
         icon: 'error',
         title: 'there was an error',
