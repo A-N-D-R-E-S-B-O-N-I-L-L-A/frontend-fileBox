@@ -98,6 +98,7 @@ export class OptionsWindowComponent implements OnInit {
     }, (err)=>{
 
       this.uploading = false;
+      console.log(err.error)
 
       Swal.fire({
         icon: 'error',

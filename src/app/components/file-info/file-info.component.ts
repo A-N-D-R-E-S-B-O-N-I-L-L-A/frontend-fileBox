@@ -18,6 +18,10 @@ export class FileInfoComponent implements OnInit {
 
   fileUrlSigned:string = '';
   fileName:string = '';
+  isImage:boolean = false;
+  isPdf:boolean = false;
+  isAudio:boolean = false;
+  isVideo:boolean = false;
 
   @Input()file:any
 
@@ -31,6 +35,41 @@ export class FileInfoComponent implements OnInit {
   ngOnInit(): void {
     this.getNewUrl(this.file.aws_key);
     this.fileName = this.file.name;
+
+    switch (this.file.aws_key.split('.').reverse()[0]) {
+      case 'png':
+        this.isImage = true;
+        break;
+
+      case 'jpg':
+        this.isImage = true;
+        break;
+      
+      case 'jpeg': 
+        this.isImage = true;
+        break;
+
+      case 'gif':
+        this.isImage = true;
+        break;
+
+      case 'pdf':
+        this.isPdf = true;
+        
+        break;
+
+      case 'mp3':
+        this.isAudio = true;
+        break;
+
+      case 'mp4':
+        this.isVideo = true;
+        break;
+    
+
+      default: console.log("")
+        break;
+    }
   }
 
   openMenuFile(){

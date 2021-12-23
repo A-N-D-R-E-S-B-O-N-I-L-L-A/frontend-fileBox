@@ -10,10 +10,10 @@
 
         <a class="link-file" routerLink='/u/file/{{file._id}}'>
             <div class="single-file">
-                <img [src]="fileUrlSigned" [alt]="file.img" *ngIf="file.type === 'image'">
-                <video [src]="fileUrlSigned" *ngIf="file.type === 'video'"></video>
-                <i class="fas fa-file-audio" *ngIf="file.type === 'audio'"></i>
-                <i class="fas fa-file-pdf" *ngIf="file.type === 'pdf'"></i>
+                <img [src]="fileUrlSigned" [alt]="file.img" *ngIf="isImage">
+                <video [src]="fileUrlSigned" *ngIf="isVideo"></video>
+                <i class="fas fa-file-audio" *ngIf="isAudio"></i>
+                <i class="fas fa-file-pdf" *ngIf="isPdf"></i>
             </div>
         </a>
             <div class="name-part">

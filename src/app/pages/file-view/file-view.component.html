@@ -10,11 +10,9 @@
 
     <audio [src]="fileUrlSigned" controls *ngIf="isAudio"></audio>
 
-    <object class="pdf-view" type="application/pdf" [data]="fileUrlSigned" *ngIf="isPdf"></object>
-
-    <h3 *ngIf="isNothing">the file could not be displayed</h3>
+    <h3 *ngIf="isNothing || isPdf">the file cannot be displayed, so please download it</h3>
     
-    <div *ngIf="!isPdf">
+    <div >
         <a class="download-button" [href]="fileUrlSigned"><i class="fas fa-download"></i> Download</a>
     </div>
     
